@@ -1,0 +1,196 @@
+[
+    {
+      "title": "Grocery shopping", 
+      "description": "Buy milk, eggs, bread, fruits and vegetables",
+      "done": false,
+      "dueDate": "2023-08-28",
+      "tags": ["errands", "groceries"],
+      "category": "chores",  
+      "id": "task1",
+      "location": "Grocery store"
+    },
+    {  
+      "title": "Pay bills",
+      "description": "Pay electric, phone and credit card bills online",
+      "done": true,
+      "dueDate": "2023-08-31",
+      "tags": ["finance", "utilities"],
+      "category": "finance",
+      "id": "task2"
+    },
+    {
+      "title": "Take dog for a walk",
+      "description": "Take Charlie on a 30 minute walk around the neighborhood",
+      "done": false,
+      "dueDate": "2023-08-27",
+      "tags": ["pets", "exercise"],
+      "category": "chores", 
+      "id": "task3",
+      "location": "Neighborhood park"
+    },
+    {
+      "title": "Doctor appointment",
+      "description": "See Dr. Smith for annual physical exam",
+      "done": false,
+      "dueDate": "2023-09-01",
+      "tags": ["health", "medical"],
+      "category": "errands",
+      "id": "task4",
+      "location": "Doctor's office"
+    },
+    {
+      "title": "Car maintenance",
+      "description": "Get oil change and inspection",
+      "done": false,
+      "dueDate": "2023-09-05",
+      "tags": ["auto", "mechanic"],
+      "category": "errands",
+      "id": "task5",
+      "location": "Auto shop"
+    },
+    {
+      "title": "Meeting with boss",
+      "description": "Discuss Q3 sales goals and plans",
+      "done": false,
+      "dueDate": "2023-08-29",
+      "tags": ["work", "manager"],
+      "category": "work",
+      "id": "task6",
+      "location": "Office"
+    },
+    {
+      "title": "Pick up dry cleaning",
+      "description": "Grab clothes left at cleaners last week", 
+      "done": false,
+      "dueDate": "2023-08-30",
+      "tags": ["errands"],
+      "category": "chores",
+      "id": "task7",
+      "location": "Cleaners"
+    },
+    {
+      "title": "Finish sales proposal",
+      "description": "Complete draft and submit for review",
+      "done": false,
+      "dueDate": "2023-09-02",
+      "tags": ["work", "sales"],
+      "category": "work",
+      "id": "task8"
+    },
+    {
+      "title": "Call plumber",
+      "description": "Schedule appointment to fix kitchen sink leak",
+      "done": false,
+      "dueDate": "2023-08-28",
+      "tags": ["home", "repairs"],
+      "category": "chores",
+      "id": "task9",
+      "location": "Home"
+    },
+    {
+      "title": " Submit conference presentation",  
+      "description": "Complete draft and submit by abstract deadline",
+      "done": false,
+      "dueDate": "2023-09-15",
+      "tags": ["work", "conference"],
+      "category": "work",
+      "id": "task10"
+    },
+    {
+      "title": "Sign up for yoga class",
+      "description": "Register for Tuesday evening beginner yoga",
+      "done": false, 
+      "dueDate": "2023-08-29",
+      "tags": ["exercise", "health"],
+      "category": "personal",
+      "id": "task11", 
+      "location": "Yoga studio"
+    },
+    {
+      "title": "Call mom",
+      "description": "Return mom's phone call from last week",
+      "done": false,
+      "dueDate": "2023-08-28",
+      "tags": ["family", "personal"],
+      "category": "personal", 
+      "id": "task12"
+    },
+    {
+      "title": "Research new laptops",
+      "description": "Compare models, prices and reviews",
+      "done": false,
+      "dueDate": "2023-09-10",
+      "tags": ["shopping", "electronics"],
+      "category": "shopping",
+      "id": "task13"
+    },
+    {
+      "title": "Clean out garage",  
+      "description": "Organize, declutter and get rid of unused items",
+      "done": false,
+      "dueDate": "2023-09-03",
+      "tags": ["home", "chores"],
+      "category": "chores",
+      "id": "task14",
+      "location": "Garage"
+    },
+    {
+      "title": "Plan vacation",
+      "description": "Research hotels, flights, activities for Hawaii trip",
+      "done": false,
+      "dueDate": "2023-09-30", 
+      "tags": ["travel", "leisure"],
+      "category": "personal",
+      "id": "task15",
+      "location": "Hawaii" 
+    },
+    {
+      "title": "Study for exam",
+      "description": "Review chapters 5-8, practice sample questions",
+      "done": false,
+      "dueDate": "2023-09-18",
+      "tags": ["education", "test"],
+      "category": "school",
+      "id": "task16"
+    },
+    {
+      "title": "Volunteer at food bank",
+      "description": "Help pack donated food boxes on Saturday 9-11am",  
+      "done": false,
+      "dueDate": "2023-09-02",
+      "tags": ["volunteer", "charity"],
+      "category": "volunteer",
+      "id": "task17",
+      "location": "Food bank"
+    },
+    {
+      "title": "Pick up medication",
+      "description": "Stop by pharmacy to get prescription refill",
+      "done": false,
+      "dueDate": "2023-08-29",
+      "tags": ["health", "errands"],
+      "category": "errands",
+      "id": "task18",
+      "location": "Pharmacy"
+    },
+    {  
+      "title": "Haircut appointment",
+      "description": "Get trim and style for wedding next week",
+      "done": false,
+      "dueDate": "2023-09-05",
+      "tags": ["personal", "hair"], 
+      "category": "personal",
+      "id": "task19",
+      "location": "Hair salon"
+    },
+    {
+      "title": "Fix dad's computer",
+      "description": "Troubleshoot network connectivity issue",
+      "done": false,
+      "dueDate": "2023-09-04",
+      "tags": ["family", "tech support"],
+      "category": "family",
+      "id": "task20",
+      "location": "Dad's house"
+    }
+  ]

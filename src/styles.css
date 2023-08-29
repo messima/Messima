@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+:root {
+  @apply bg-slate-800 text-white;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 48;
+}
+
+.greyedOut {
+  @apply text-slate-400;
+}
+
+.boldIcon {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 900,
+    "GRAD" 0,
+    "opsz" 48;
+}
+
+.textInput {
+  @apply w-full rounded-md border-b-2 border-slate-400 bg-slate-900 px-3 py-2 shadow-md focus:border-white focus:outline-none;
+}
