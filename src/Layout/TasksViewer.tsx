@@ -3,7 +3,7 @@ import { getAllTasks } from "../functions/services/task.service"
 import { useSearchParams } from "react-router-dom"
 import ListView from "../components/ListView"
 
-export default function TaskViewer() {
+export default function TasksViewer() {
   const [searchParams, setSearchParams] = useSearchParams()
   const tagFilter = searchParams.get("tags") || ``
   const [tasks, setTasks] = useState<Task[]>([])

@@ -9,8 +9,8 @@ export default function ViewTask() {
   const [task, setTask]: [Task, Dispatch<SetStateAction<Task>>] =
     useState<Task>({
       id: 0,
-      title: `asdgf`,
-      description: `asdf`,
+      title: ``,
+      description: ``,
       done: false,
       tags: [],
     })
