@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction, useRef, useState } from "react"
-import { Link, redirect, useNavigate } from "react-router-dom"
+import { useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { addNewTask } from "../functions/services/task.service"
 import NavBar from "../Layout/NavBar"
 export default function NewTask() {
