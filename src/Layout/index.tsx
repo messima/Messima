@@ -9,7 +9,7 @@ import { Routes, Route } from "react-router-dom"
 import { isTasksTableExist } from "../functions/services/task.service"
 
 export default function Layout() {
-  const [isFirstRun, setIsFirstRun] = useState(true)
+  const [isFirstRun, setIsFirstRun] = useState(false)
   const [updater, update] = useState(false)
   useEffect(() => {
     isTasksTableExist().then((res) => {
