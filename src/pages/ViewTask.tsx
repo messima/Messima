@@ -35,10 +35,10 @@ export default function ViewTask() {
             refresh((prev) => !prev)
           })
         }}
-        className="rounded bg-slate-500 px-2 py-1 hover:bg-slate-600"
+        className="rounded bg-neutral-500 px-2 py-2 hover:bg-neutral-600"
       >
         <span className="flex items-center gap-2">
-          <span className="material-symbols-outlined grid h-8 w-8 place-items-center rounded bg-slate-800">
+          <span className="material-symbols-outlined grid h-8 w-8 place-items-center rounded bg-neutral-800">
             {task.done && "done"}
           </span>
           mark tasks as {task.done && "un"}done
@@ -52,12 +52,12 @@ export default function ViewTask() {
               navigate(`/`)
             })
           }}
-          className="grid place-items-center text-slate-300 hover:text-slate-100"
+          className="grid place-items-center text-neutral-300 hover:text-rose-300"
         >
           <span className="material-symbols-outlined">delete</span>
         </button>
       </div>
-      <div className="text-slate-300">{task.description}</div>
+      <div className="text-neutral-300">{task.description}</div>
       {task.tags !== null && (
         <div className="mt-2 flex flex-wrap gap-2">
           {task.tags.map((tag, i) => (

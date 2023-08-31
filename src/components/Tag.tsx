@@ -9,7 +9,7 @@ export default function Tag({ tag }: { tag: string }) {
         e.stopPropagation()
         navigate({ pathname: `/`, search: `?tags=${tag}` })
       }}
-      className="cursor-pointer rounded-md bg-slate-700 px-2 py-0 hover:bg-slate-900"
+      className="cursor-pointer rounded-md bg-neutral-700 px-2 py-0 hover:bg-neutral-900"
     >
       {tag}
     </span>

@@ -16,7 +16,8 @@
 }
 
 :root {
-  @apply bg-slate-800 text-white;
+  @apply bg-neutral-800 text-white;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .material-symbols-outlined {
@@ -28,7 +29,7 @@
 }
 
 .greyedOut {
-  @apply text-slate-400;
+  @apply text-neutral-400;
 }
 
 .boldIcon {
@@ -40,5 +41,5 @@
 }
 
 .textInput {
-  @apply w-full rounded-md border-b-2 border-slate-400 bg-slate-900 px-3 py-2 shadow-md focus:border-white focus:outline-none;
+  @apply w-full rounded-md border-b-2 border-neutral-400 bg-neutral-900 px-3 py-2 shadow-md focus:border-white focus:outline-none;
 }
