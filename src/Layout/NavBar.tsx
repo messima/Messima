@@ -1,18 +1,20 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function NavBar({ headline }: { headline: string }) {
   const navigate = useNavigate()
   return (
-    <div className="my-2 flex items-center gap-2">
+    <div className="flex items-start gap-2">
       <span
-        onClick={(e) => {
+        onClick={() => {
           navigate(-1)
         }}
-        className="grid cursor-pointer place-items-center hover:text-slate-400"
+        className=" grid cursor-pointer place-items-center justify-center hover:text-slate-400"
       >
         <span className="material-symbols-outlined">arrow_back</span>
       </span>
-      <span className="text-xl font-bold tracking-wide">{headline}</span>
+      <span className="text-xl font-bold leading-[1.4rem] tracking-wide">
+        {headline}
+      </span>
     </div>
   )
 }

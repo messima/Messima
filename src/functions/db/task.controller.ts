@@ -104,6 +104,16 @@ async function deleteOne(id: number) {
   }
 }
 
+export async function isTableExist() {
+  try {
+    const res = await db.select(`SELECT * FROM tasks LIMIT 1`)
+    console.log(res)
+    return true
+  } catch (err) {
+    return false
+  }
+}
+
 export default {
   readAll,
   updateOne,
@@ -111,4 +121,5 @@ export default {
   createOne,
   readOne,
   deleteOne,
+  isTableExist,
 }

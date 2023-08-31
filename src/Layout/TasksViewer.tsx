@@ -8,6 +8,7 @@ export default function TasksViewer() {
   const tagFilter = searchParams.get("tags") || ``
   const [tasks, setTasks] = useState<Task[]>([])
   const [refresher, refresh] = useState(true)
+  const [completedTasks, setCompletedTasks] = useState<Task[]>([])
 
   useEffect(() => {
     getAllTasks().then((res: Task[]) => {
@@ -15,7 +16,8 @@ export default function TasksViewer() {
       if (tagFilter !== ``) {
         res = res.filter((task) => task.tags.includes(tagFilter))
       }
-      setTasks(res)
+      setCompletedTasks(res.filter((t) => t.done))
+      setTasks(res.filter((t) => !t.done))
     })
   }, [refresher, tagFilter, searchParams])
 
@@ -29,6 +31,13 @@ export default function TasksViewer() {
       >
         {tagFilter}
       </span>
+      <div>
+        {completedTasks.map((t) => (
+          <span className="material-symbols-outlined" key={t.id}>
+            done
+          </span>
+        ))}
+      </div>
       <ListView refresh={refresh} tasks={tasks} />
     </>
   )

@@ -1,4 +1,6 @@
+import { fs } from "@tauri-apps/api"
 import taskController from "../db/task.controller"
+import { BaseDirectory } from "@tauri-apps/api/fs"
 
 export async function getAllTasks(): Promise<Task[]> {
   return await taskController.readAll()
@@ -21,4 +23,7 @@ export async function createDbFile() {
   return await taskController.createTaskTable()
 }
 
-export default { getAllTasks, markTaskAsDone }
+export async function isTasksTableExist() {
+  return await taskController.isTableExist()
+  return await fs.exists("tasks.db", { dir: BaseDirectory.AppData })
+}

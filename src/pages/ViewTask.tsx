@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { deleteTaskById, getTaskById } from "../functions/services/task.service"
 import Tag from "../components/Tag"
 import NavBar from "../Layout/NavBar"
@@ -24,7 +24,7 @@ export default function ViewTask() {
 
   return (
     <div className="flex flex-col gap-2 p-2">
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex items-start justify-between gap-2 p-2">
         <NavBar headline={task.title} />
         <button
           onClick={() => {
@@ -39,7 +39,7 @@ export default function ViewTask() {
       </div>
       <div className="text-slate-300">{task.description}</div>
       {task.tags !== null && (
-        <div className="mt-2 flex gap-2">
+        <div className="mt-2 flex flex-wrap gap-2">
           {task.tags.map((tag, i) => (
             <Tag tag={tag} key={i} />
           ))}
