@@ -10,11 +10,14 @@ export default function TasksViewer() {
   const [refresher, refresh] = useState(true)
   const [completedTasks, setCompletedTasks] = useState<Task[]>([])
   const navigate = useNavigate()
+
   useEffect(() => {
     getAllTasks().then((res: Task[]) => {
       res.sort((a, b) => Number(a.id) - Number(b.id))
-      if (tagFilter !== ``) {
-        res = res.filter((task) => task.tags.includes(tagFilter))
+      if (searchParams.getAll("tags").length) {
+        searchParams.getAll("tags").forEach((tf) => {
+          res = res.filter((task) => task.tags.includes(tf))
+        })
       }
       setCompletedTasks(res.filter((t) => t.done))
       setTasks(res.filter((t) => !t.done))
@@ -23,14 +26,25 @@ export default function TasksViewer() {
 
   return (
     <>
-      <span
-        onClick={() => {
-          setSearchParams({})
-        }}
-        className="w-fit cursor-pointer rounded-md bg-neutral-700 px-2 hover:bg-neutral-900"
-      >
-        {tagFilter}
-      </span>
+      <div className="flex gap-2">
+        {searchParams.getAll("tags").map((t, i) => {
+          return (
+            <span
+              onClick={() => {
+                setSearchParams({
+                  tags: searchParams.getAll("tags").filter((v) => {
+                    return v !== t
+                  }),
+                })
+              }}
+              className="w-fit cursor-pointer rounded-md bg-neutral-700 px-2 hover:bg-neutral-900"
+              key={i}
+            >
+              {t}
+            </span>
+          )
+        })}
+      </div>
       <div className="p-2">
         {completedTasks.map((t) => (
           <span
