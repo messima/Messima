@@ -104,6 +104,15 @@ async function deleteOne(id: number) {
   }
 }
 
+export async function isTableExist() {
+  try {
+    await db.select(`SELECT * FROM tasks LIMIT 1`)
+    return true
+  } catch {
+    return false
+  }
+}
+
 export default {
   readAll,
   updateOne,
@@ -111,4 +120,5 @@ export default {
   createOne,
   readOne,
   deleteOne,
+  isTableExist,
 }
