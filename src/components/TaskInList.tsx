@@ -16,29 +16,27 @@ export default function TaskInList({
       className={`rounded-md bg-slate-600 p-2`}
     >
       <div className="flex flex-wrap items-start gap-2">
-        <span className="flex gap-2 whitespace-nowrap">
+        <span
+          className="flex aspect-square w-6  cursor-pointer items-center justify-center rounded-md bg-slate-900"
+          onClick={(e) => {
+            e.stopPropagation()
+            markTaskAsDone(task).then(() => {
+              refresh((prev: boolean) => !prev)
+            })
+          }}
+        >
           <span
-            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md bg-slate-900"
-            onClick={(e) => {
-              e.stopPropagation()
-              markTaskAsDone(task).then(() => {
-                refresh((prev: boolean) => !prev)
-              })
-            }}
+            className={`material-symbols-outlined opacity-0 hover:opacity-50`}
           >
-            <span
-              className={`material-symbols-outlined opacity-0 hover:opacity-50`}
-            >
-              done
-            </span>
-          </span>
-          <span
-            className={` cursor-default whitespace-normal text-lg font-bold leading-[1.4rem] tracking-wide`}
-          >
-            {task.title}
+            done
           </span>
         </span>
-        <span className="ml-auto">
+        <span
+          className={` mr-3 grow-[2] basis-[min-content] cursor-default text-lg font-bold leading-[1.4rem] tracking-wide`}
+        >
+          {task.title}
+        </span>
+        <span className="ml-auto grow basis-[min-content] self-end">
           {task.tags !== null && (
             <div className="flex flex-wrap justify-end gap-2">
               {task.tags.map((tag, i) => (
