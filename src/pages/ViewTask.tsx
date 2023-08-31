@@ -1,11 +1,16 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { deleteTaskById, getTaskById } from "../functions/services/task.service"
+import {
+  deleteTaskById,
+  getTaskById,
+  markTaskAsDone,
+} from "../functions/services/task.service"
 import Tag from "../components/Tag"
 import NavBar from "../Layout/NavBar"
 
 export default function ViewTask() {
   const navigate = useNavigate()
+  const [refresher, refresh] = useState(true)
   const [task, setTask]: [Task, Dispatch<SetStateAction<Task>>] =
     useState<Task>({
       id: 0,
@@ -20,10 +25,25 @@ export default function ViewTask() {
     getTaskById(id).then((res: any) => {
       setTask(res)
     })
-  }, [])
+  }, [refresher])
 
   return (
     <div className="flex flex-col gap-2 p-2">
+      <button
+        onClick={() => {
+          markTaskAsDone(task).then(() => {
+            refresh((prev) => !prev)
+          })
+        }}
+        className="rounded bg-slate-500 px-2 py-1 hover:bg-slate-600"
+      >
+        <span className="flex items-center gap-2">
+          <span className="material-symbols-outlined grid h-8 w-8 place-items-center rounded bg-slate-800">
+            {task.done && "done"}
+          </span>
+          mark tasks as {task.done && "un"}done
+        </span>
+      </button>
       <div className="flex items-start justify-between gap-2 p-2">
         <NavBar headline={task.title} />
         <button
