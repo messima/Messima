@@ -1,6 +1,4 @@
-import { fs } from "@tauri-apps/api"
 import taskController from "../db/task.controller"
-import { BaseDirectory } from "@tauri-apps/api/fs"
 
 export async function getAllTasks(): Promise<Task[]> {
   return await taskController.readAll()
