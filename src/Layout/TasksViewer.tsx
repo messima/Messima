@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAllTasks } from "../functions/services/task.service"
-import { useSearchParams } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import ListView from "../components/ListView"
 
 export default function TasksViewer() {
@@ -9,7 +9,7 @@ export default function TasksViewer() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [refresher, refresh] = useState(true)
   const [completedTasks, setCompletedTasks] = useState<Task[]>([])
-
+  const navigate = useNavigate()
   useEffect(() => {
     getAllTasks().then((res: Task[]) => {
       res.sort((a, b) => Number(b.done) - Number(a.done))
@@ -31,9 +31,15 @@ export default function TasksViewer() {
       >
         {tagFilter}
       </span>
-      <div>
+      <div className="p-2">
         {completedTasks.map((t) => (
-          <span className="material-symbols-outlined" key={t.id}>
+          <span
+            className="material-symbols-outlined cursor-pointer hover:text-blue-400"
+            key={t.id}
+            onClick={() => {
+              navigate(`/task/${t.id}`)
+            }}
+          >
             done
           </span>
         ))}
