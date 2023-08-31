@@ -25,5 +25,4 @@ export async function createDbFile() {
 
 export async function isTasksTableExist() {
   return await taskController.isTableExist()
-  return await fs.exists("tasks.db", { dir: BaseDirectory.AppData })
 }

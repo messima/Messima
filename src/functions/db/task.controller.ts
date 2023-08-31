@@ -106,10 +106,9 @@ async function deleteOne(id: number) {
 
 export async function isTableExist() {
   try {
-    const res = await db.select(`SELECT * FROM tasks LIMIT 1`)
-    console.log(res)
+    await db.select(`SELECT * FROM tasks LIMIT 1`)
     return true
-  } catch (err) {
+  } catch {
     return false
   }
 }
