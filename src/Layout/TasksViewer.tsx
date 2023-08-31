@@ -12,7 +12,7 @@ export default function TasksViewer() {
   const navigate = useNavigate()
   useEffect(() => {
     getAllTasks().then((res: Task[]) => {
-      res.sort((a, b) => Number(b.done) - Number(a.done))
+      res.sort((a, b) => Number(a.id) - Number(b.id))
       if (tagFilter !== ``) {
         res = res.filter((task) => task.tags.includes(tagFilter))
       }
@@ -34,7 +34,7 @@ export default function TasksViewer() {
       <div className="p-2">
         {completedTasks.map((t) => (
           <span
-            className="material-symbols-outlined cursor-pointer hover:text-blue-400"
+            className="material-symbols-outlined cursor-pointer text-sm hover:text-blue-400"
             key={t.id}
             onClick={() => {
               navigate(`/task/${t.id}`)
