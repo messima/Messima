@@ -27,14 +27,14 @@ export default function TasksViewer() {
         onClick={() => {
           setSearchParams({})
         }}
-        className="w-fit cursor-pointer rounded-md bg-slate-700 px-2 hover:bg-slate-900"
+        className="w-fit cursor-pointer rounded-md bg-neutral-700 px-2 hover:bg-neutral-900"
       >
         {tagFilter}
       </span>
       <div className="p-2">
         {completedTasks.map((t) => (
           <span
-            className="material-symbols-outlined cursor-pointer text-sm hover:text-blue-400"
+            className="material-symbols-outlined cursor-pointer text-sm hover:text-rose-300"
             key={t.id}
             onClick={() => {
               navigate(`/task/${t.id}`)

@@ -13,11 +13,11 @@ export default function TaskInList({
   return (
     <div
       onClick={() => navigate(`/task/${task.id}`)}
-      className={`rounded-md bg-slate-600 p-2`}
+      className={`cursor-pointer rounded-md bg-neutral-600 p-2`}
     >
       <div className="flex flex-wrap items-start gap-2">
         <span
-          className="flex aspect-square w-6  cursor-pointer items-center justify-center rounded-md bg-slate-900"
+          className="flex aspect-square w-6  items-center justify-center rounded-md bg-neutral-900"
           onClick={(e) => {
             e.stopPropagation()
             markTaskAsDone(task).then(() => {
@@ -32,7 +32,7 @@ export default function TaskInList({
           </span>
         </span>
         <span
-          className={` mr-3 grow-[2] basis-[min-content] cursor-default text-lg font-bold leading-[1.4rem] tracking-wide`}
+          className={` mr-3 grow-[2] basis-[min-content] text-lg font-bold leading-[1.4rem] tracking-wide`}
         >
           {task.title}
         </span>

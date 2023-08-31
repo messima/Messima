@@ -7,12 +7,12 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "mesimma",
+    "productName": "messima",
     "version": "0.0.0"
   },
   "tauri": {
     "allowlist": {
-      "all": true,
+      "all": false,
       "shell": {
         "all": false,
         "open": true
@@ -34,7 +34,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "messima",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -50,7 +50,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "mesimma",
+        "title": "Messima",
         "width": 800,
         "height": 600
       }

@@ -55,7 +55,7 @@ export default function NewTask() {
           <label htmlFor="newTag">Tags</label>
           {tags.map((tag, i) => (
             <span
-              className="cursor-pointer rounded bg-slate-900 px-1 hover:bg-slate-950"
+              className="cursor-pointer rounded bg-neutral-900 px-1 hover:bg-neutral-950"
               onClick={() => setTags(tags.filter((v) => v !== tag))}
               key={i}
             >
@@ -80,13 +80,16 @@ export default function NewTask() {
                 setNewTag("")
               }
             }}
-            className="grid aspect-square h-full w-12 place-items-center  rounded bg-slate-500 hover:bg-slate-600"
+            className="grid aspect-square h-full w-12 place-items-center  rounded bg-neutral-500 hover:bg-neutral-600"
           >
             <span className="material-symbols-outlined">add</span>
           </button>
         </div>
         <div>{errMsg}</div>
-        <button type="submit" className="rounded-lg bg-blue-500 px-3 py-2">
+        <button
+          type="submit"
+          className="rounded-lg bg-rose-500 px-3 py-2 hover:bg-rose-600"
+        >
           Add Task
         </button>
       </form>
