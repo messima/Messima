@@ -1,6 +1,10 @@
 import Database from "tauri-plugin-sql-api"
 
-const db = await Database.load(`sqlite:tasks.db`)
+let db: Database
+
+Database.load(`sqlite:tasks.db`).then((res) => {
+  db = res
+})
 
 async function createTaskTable() {
   return await db.execute(`CREATE TABLE tasks (
