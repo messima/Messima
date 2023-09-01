@@ -1,12 +1,7 @@
 import Database from "tauri-plugin-sql-api"
 
-let db: Database
-
-Database.load(`sqlite:tasks.db`).then((res) => {
-  db = res
-})
-
 async function createTaskTable() {
+  const db = await Database.load(`sqlite:tasks.db`)
   return await db.execute(`CREATE TABLE tasks (
         id INTEGER PRIMARY KEY,
         title TEXT,
@@ -42,6 +37,7 @@ async function createTaskTable() {
 }
 
 async function createOne(task: Task) {
+  const db = await Database.load(`sqlite:tasks.db`)
   try {
     return await db.execute(
       `INSERT into tasks (id,title, description,tags,done) VALUES(${
@@ -56,6 +52,7 @@ async function createOne(task: Task) {
 }
 
 async function readAll() {
+  const db = await Database.load(`sqlite:tasks.db`)
   const res = <[]>await db.select(`SELECT * FROM tasks`)
 
   return res.map((task: any) => {
@@ -72,6 +69,7 @@ async function readAll() {
 }
 
 async function readOne(id: number) {
+  const db = await Database.load(`sqlite:tasks.db`)
   try {
     const res: any = <[{}]>(
       await db.select(`SELECT * FROM tasks WHERE id = ${id}`)
@@ -87,6 +85,7 @@ async function readOne(id: number) {
 }
 
 async function updateOne(task: Task) {
+  const db = await Database.load(`sqlite:tasks.db`)
   const cmd = `UPDATE tasks
     SET title = "${task.title}",
         description = "${task.description}",
@@ -102,6 +101,7 @@ async function updateOne(task: Task) {
 
 async function deleteOne(id: number) {
   try {
+    const db = await Database.load(`sqlite:tasks.db`)
     return await db.execute(`DELETE FROM tasks WHERE id = ${id}`)
   } catch (err) {
     console.log(err)
@@ -109,6 +109,7 @@ async function deleteOne(id: number) {
 }
 
 export async function isTableExist() {
+  const db = await Database.load(`sqlite:tasks.db`)
   try {
     await db.select(`SELECT * FROM tasks LIMIT 1`)
     return true

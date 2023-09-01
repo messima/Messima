@@ -16,7 +16,7 @@ export default function Tag({ tag }: { tag: string }) {
           }`,
         })
       }}
-      className="cursor-pointer rounded-md bg-neutral-700 px-2 py-0 hover:bg-neutral-900"
+      className="cursor-pointer whitespace-nowrap rounded-md bg-neutral-700 px-2 py-0 hover:bg-neutral-900"
     >
       {tag}
     </span>

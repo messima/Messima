@@ -28,7 +28,7 @@ export default function ViewTask() {
   }, [refresher])
 
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-2 p-2 ">
       <button
         onClick={() => {
           markTaskAsDone(task).then(() => {
@@ -38,8 +38,10 @@ export default function ViewTask() {
         className="rounded bg-neutral-500 px-2 py-2 hover:bg-neutral-600"
       >
         <span className="flex items-center gap-2">
-          <span className="material-symbols-outlined grid h-8 w-8 place-items-center rounded bg-neutral-800">
-            {task.done && "done"}
+          <span className="grid h-8 w-8 place-items-center rounded bg-neutral-800">
+            <span className="material-symbols-outlined ">
+              {task.done && "done"}
+            </span>
           </span>
           mark tasks as {task.done && "un"}done
         </span>
@@ -57,7 +59,7 @@ export default function ViewTask() {
           <span className="material-symbols-outlined">delete</span>
         </button>
       </div>
-      <div className="text-neutral-300">{task.description}</div>
+      <div className="select-text text-neutral-300">{task.description}</div>
       {task.tags !== null && (
         <div className="mt-2 flex flex-wrap gap-2">
           {task.tags.map((tag, i) => (
